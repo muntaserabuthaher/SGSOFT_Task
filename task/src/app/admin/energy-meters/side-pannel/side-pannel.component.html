@@ -2,7 +2,7 @@
     <mat-icon (click)="closeSidePannel()">arrow_back</mat-icon>
     <span>{{isEdit ?'update ' : ''}} {{data.nom}}</span>
     <div class="pannel-action">
-        <mat-icon>delete</mat-icon>
+        <mat-icon (click)="onDelete()">delete</mat-icon>
         <mat-icon (click)="toggleEditing()"> {{ isEdit ? 'close' : 'edit'}}</mat-icon>
     </div>
 </div>

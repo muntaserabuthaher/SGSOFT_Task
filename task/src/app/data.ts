@@ -48,7 +48,7 @@ export const EM_DATA: EnergyMeters[] = [
   {
     id: 2,
     nom: '321',
-    sites: '10 rue des points angle rd 321',
+    sites: '321',
     energyType: 'Water',
     energyUnit: 'Water',
     srcType: 'Internal',

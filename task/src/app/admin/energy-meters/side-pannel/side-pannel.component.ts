@@ -11,6 +11,7 @@ export class SidePannelComponent implements OnChanges {
   @Input() data!: EnergyMeters;
   @Output() hideSidePannel = new EventEmitter<boolean>();
   @Output() updateData = new EventEmitter<EnergyMeters>();
+  @Output() deleteData = new EventEmitter<number>();
 
   EnergyTypes = Object.keys(EnergyTypes);
   ConsumptionPeriod = Object.keys(ConsumptionPeriod);
@@ -51,6 +52,11 @@ export class SidePannelComponent implements OnChanges {
 
   closeSidePannel() {
     this.hideSidePannel.emit(true);
+  }
+
+  onDelete(){
+    this.deleteData.emit(this.updateForm?.value?.id);
+    this.closeSidePannel();
   }
 
   submitForm() {

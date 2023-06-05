@@ -10,6 +10,7 @@ export class EnergyMetersComponent implements OnInit {
   isHidden = true;
   data!: EnergyMeters;
   updatedData!: EnergyMeters;
+  elementDeletedId!: number;
   constructor() {}
 
   ngOnInit(): void {}
@@ -25,5 +26,9 @@ export class EnergyMetersComponent implements OnInit {
 
   updateData(event: EnergyMeters) {
     this.updatedData = event;
+  }
+
+  deleteData(event: number){
+    this.elementDeletedId = event;
   }
 }

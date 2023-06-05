@@ -2,10 +2,10 @@
     <mat-card-content>
         <div class="container">
             <div class="main-content">
-                <app-energy-meters-container (selectedColumn)="toggleSidePanel($event)" [newData]="updatedData"></app-energy-meters-container>
+                <app-energy-meters-container (selectedColumn)="toggleSidePanel($event)" [newData]="updatedData" [elementDeletedId]="elementDeletedId"></app-energy-meters-container>
             </div>
             <div class="side-pannel" [ngClass]="{'hide': isHidden}" *ngIf="!isHidden">
-                <app-side-pannel [data]="data" (hideSidePannel)="closeSidePannel($event)" (updateData)="updateData($event)"></app-side-pannel>
+                <app-side-pannel [data]="data" (hideSidePannel)="closeSidePannel($event)" (updateData)="updateData($event)" (deleteData)="deleteData($event)"></app-side-pannel>
             </div>
         </div>
     </mat-card-content>
