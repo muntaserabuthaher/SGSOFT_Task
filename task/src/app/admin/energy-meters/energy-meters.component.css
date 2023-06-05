@@ -1,0 +1,23 @@
+.energy-meters-containers {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.hide {
+    width: 0;
+    transform: translateX(-12rem);
+    transition: transform 300ms ease-out;
+}
+
+.side-pannel {
+    width: 400px;
+    transition: transform 300ms ease-in;
+}

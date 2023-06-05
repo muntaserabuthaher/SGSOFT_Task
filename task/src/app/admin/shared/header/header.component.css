@@ -1,0 +1,37 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 50px;
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right span {
+    margin-right: 20px;
+}

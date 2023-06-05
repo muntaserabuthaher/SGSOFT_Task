@@ -1,0 +1,68 @@
+<div class="pannel-header">
+    <mat-icon (click)="closeSidePannel()">arrow_back</mat-icon>
+    <span>{{isEdit ?'update ' : ''}} {{data.nom}}</span>
+    <div class="pannel-action">
+        <mat-icon>delete</mat-icon>
+        <mat-icon (click)="toggleEditing()"> {{ isEdit ? 'close' : 'edit'}}</mat-icon>
+    </div>
+</div>
+
+<div class="pannel-info" *ngIf="!isEdit">
+    <p class="pannel-info-header">General info</p>
+    <p>Meter reference: {{data.reference}}</p>
+    <p>Energy type: {{data.energyType}}</p>
+    <p>Consumbtion period: {{data.consumptionPeriod}}</p>
+    <p>Energy unit: {{data.energyUnit}}</p>
+    <p>Creation date: 01-02-2023 22:23</p>
+    <p>Last update date: 01-02-2023 22:23</p>
+    <div class="pannel-footer">
+        This meter is not having any current contract
+    </div>
+</div>
+
+<div class="pannel-editor" *ngIf="isEdit">
+    <form class="filter-form" [formGroup]="updateForm" (ngSubmit)="submitForm()">
+        <mat-form-field appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input matInput formControlName="nom">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Sites</mat-label>
+            <mat-select formControlName="sites">
+                <mat-option value="one">First option</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Energy type</mat-label>
+            <mat-select formControlName="energyType">
+                <mat-option *ngFor="let item of EnergyTypes" [value]="item">{{item}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Energy unit</mat-label>
+            <mat-select formControlName="energyUnit">
+                <mat-option *ngFor="let item of EnergyUnit" [value]="item">{{item}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Src type</mat-label>
+            <mat-select formControlName="srcType">
+                <mat-option *ngFor="let item of SrcType" [value]="item">{{item}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Reference</mat-label>
+            <input matInput formControlName="reference">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Consumption period</mat-label>
+            <mat-select formControlName="consumptionPeriod">
+                <mat-option *ngFor="let item of ConsumptionPeriod" [value]="item">{{item}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <section>
+            <mat-checkbox formControlName="main">Main</mat-checkbox>
+        </section>
+        <button mat-button type="submit" class="update-button">Update meter</button>
+    </form>
+</div>

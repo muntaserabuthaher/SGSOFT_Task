@@ -1,0 +1,26 @@
+.filter-form {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 300px)) minmax(150px, 1fr);
+    grid-gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .filter-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+table {
+    width: 100%;
+    box-shadow: none;
+}
+
+table td,
+table th {
+    border: none;
+}
+
+table td {
+    background-color: var(--gray);
+    margin-bottom: 10px;
+}

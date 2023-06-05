@@ -1,0 +1,9 @@
+<nav>
+    <ul *ngFor="let item of ListSidebar" id="sidebar-list">
+        <li routerLink={{item.path}} routerLinkActive="active-li">
+            <a>
+                <mat-icon class="active-li-icon">{{item.iconSrc}}</mat-icon>
+            </a>
+        </li>
+    </ul>
+</nav>

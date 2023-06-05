@@ -1,0 +1,10 @@
+.container {
+    display: grid;
+    grid-template-columns: 70px auto;
+    height: calc(100% - 50px);
+}
+
+.main-content {
+    padding: 10px 5px;
+    background-color: var(--gray);
+}
