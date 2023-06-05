@@ -37,3 +37,11 @@ mat-icon {
     padding-top: 20px;
     font-weight: bold;
 }
+
+::ng-deep md-checkbox .md-icon {
+    background: red;
+}
+
+::ng-deep md-checkbox.md-default-theme.md-checked .md-icon {
+    background: orange;
+}

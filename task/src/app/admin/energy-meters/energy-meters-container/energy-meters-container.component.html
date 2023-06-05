@@ -7,12 +7,14 @@
         <mat-form-field appearance="outline">
             <mat-label>Src type</mat-label>
             <mat-select (selectionChange)="search()" [(ngModel)]="srcType" [ngModelOptions]="{standalone: true}">
+                <mat-option [value]="">All</mat-option>
                 <mat-option *ngFor="let item of SrcType" [value]="item">{{item}}</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Energy type</mat-label>
             <mat-select (selectionChange)="search()" [(ngModel)]="energyType" [ngModelOptions]="{standalone: true}">
+                <mat-option [value]="">All</mat-option>
                 <mat-option *ngFor="let item of EnergyTypes" [value]="item">{{item}}</mat-option>
             </mat-select>
         </mat-form-field>

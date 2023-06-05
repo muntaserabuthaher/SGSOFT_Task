@@ -39,13 +39,11 @@ export class EnergyMetersContainerComponent implements OnInit, OnChanges {
       const id = changes?.['newData']?.currentValue?.id;
       const elementIndex = this.dataSource?.findIndex((ele) => ele.id == id);
       this.dataSource[elementIndex] = changes?.['newData']?.currentValue;
-      alert(1);
     }
     if (!changes?.['newData']) {
       const id = changes?.['elementDeletedId']?.currentValue;
       const elementIndex = this.dataSource?.findIndex((ele) => ele.id == id);
       this.dataSource.splice(elementIndex, 1);
-      alert(2);
     }
     this.table?.renderRows();
   }
@@ -55,17 +53,13 @@ export class EnergyMetersContainerComponent implements OnInit, OnChanges {
   }
 
   search() {
-    // if(!this.sites && !this.srcType && !this.energyType && !this.searchName){
-    //   this.dataSource = EM_DATA;
-    //   return;
-    // }
-    // console.log(this.sites, this.srcType, this.energyType, this.searchName);
+
     this.dataSource = EM_DATA.filter(
       (item) =>
-        item.sites.includes(this.sites) &&
-        item.srcType.includes(this.srcType) &&
-        item.energyType.includes(this.energyType) &&
-        item.nom.includes(this.searchName)
+        item.sites.includes(this.sites || '') &&
+        item.srcType.includes(this.srcType || '') &&
+        item.energyType.includes(this.energyType || '') &&
+        item.nom.includes(this.searchName || '')
     );
   }
 }
