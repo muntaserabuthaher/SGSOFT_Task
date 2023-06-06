@@ -6,6 +6,7 @@
     </div>
     <div class="header-right">
         <span>dicanche 4 juin 2023 - 11:50</span>
-        <mat-icon>brightness_2</mat-icon>
+        <mat-icon (click)="onSetThemeTwo()" *ngIf="isLightMode">brightness_2</mat-icon>
+        <mat-icon (click)="onSetThemeOne()" *ngIf="!isLightMode">wb_sunny</mat-icon>
     </div>
 </header>

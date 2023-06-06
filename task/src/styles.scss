@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "@angular/material" as mat;
+@include mat.core();
+$my-palette: ( 50: #e9f5fb, 100: #c9e7f4, 200: #a5d7ed, 300: #80c7e6, 400: #65bbe0, 500: #4aafdb, 600: #43a8d7, 700: #3a9fd2, 800: #3296cd, 900: #2286c4, A100: #feffff, A200: #cbeaff, A400: #98d5ff, A700: #7fcbff, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #000000, 600: #000000, 700: #000000, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #000000, A700: #000000, ));
+$css-variables-material-primary: mat.define-palette($my-palette);
+$css-variables-material-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$css-variables-material-warn: mat.define-palette(mat.$red-palette);
+$css-variables-material-theme: mat.define-light-theme( ( color: ( primary: $css-variables-material-primary, accent: $css-variables-material-accent, warn: $css-variables-material-warn, ), ));
+@include mat.all-component-themes($css-variables-material-theme);
+@import "./app/_variables.scss";
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: var(--color-page-background);
+    color: var(--color-text);
+}
+
+.theme-two {
+    $my-palette: ( 50: #f9fcfe, 100: #f1f6fb, 200: #e7f1f9, 300: #ddebf7, 400: #d6e6f5, 500: #cfe2f3, 600: #cadff1, 700: #c3daef, 800: #bdd6ed, 900: #b2cfea, A100: #ffffff, A200: #ffffff, A400: #ffffff, A700: #ffffff, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #000000, 600: #000000, 700: #000000, 800: #000000, 900: #000000, A100: #000000, A200: #000000, A400: #000000, A700: #000000, ));
+    $css-variables-material-primary: mat.define-palette($my-palette);
+    $css-variables-material-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+    $css-variables-material-warn: mat.define-palette(mat.$red-palette);
+    $css-variables-material-theme: mat.define-light-theme( ( color: ( primary: $css-variables-material-primary, accent: $css-variables-material-accent, warn: $css-variables-material-warn, ), ));
+    @include mat.all-component-themes($css-variables-material-theme);
+    --color-page-background: #242424;
+    --color-text: #{$white-color};
+    .mat-mdc-text-field-wrapper {
+        background-color: var(--color-text);
+        color: var(--color-page-background);
+    }
+}
+
+:root {
+    --color-page-background: #{$white-color};
+    --color-text: #{$black-color};
+}

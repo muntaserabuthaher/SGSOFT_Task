@@ -1,13 +1,14 @@
+@import "../../../variables";
 .pannel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid $secondary-color;
     height: 50px;
 }
 
 .pannel-footer {
-    border-top: 1px solid var(--gray);
+    border-top: 1px solid $secondary-color;
 }
 
 mat-form-field {
@@ -22,7 +23,7 @@ mat-icon {
 .update-button {
     width: 100%;
     height: 40px;
-    background-color: var(--blue);
+    background-color: $primary-color;
 }
 
 .pannel-info p {
@@ -38,10 +39,7 @@ mat-icon {
     font-weight: bold;
 }
 
-::ng-deep md-checkbox .md-icon {
-    background: red;
-}
-
-::ng-deep md-checkbox.md-default-theme.md-checked .md-icon {
-    background: orange;
+.mat-mdc-checkbox label {
+    background-color: var(--color-page-background);
+    color: var(--color-text);
 }

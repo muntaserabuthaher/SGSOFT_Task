@@ -5,7 +5,7 @@ import { EM_DATA, EnergyMeters, EnergyTypes, SrcType } from 'src/app/data';
 @Component({
   selector: 'app-energy-meters-container',
   templateUrl: './energy-meters-container.component.html',
-  styleUrls: ['./energy-meters-container.component.css'],
+  styleUrls: ['./energy-meters-container.component.scss'],
 })
 export class EnergyMetersContainerComponent implements OnInit, OnChanges {
   @Output() selectedColumn = new EventEmitter<EnergyMeters>();
@@ -28,7 +28,7 @@ export class EnergyMetersContainerComponent implements OnInit, OnChanges {
       'consumptionPeriod',
       'srcType',
     ];
-    this.sites ="";
+    this.sites = '';
     this.srcType = '';
     this.energyType = '';
     this.searchName = '';
@@ -53,7 +53,6 @@ export class EnergyMetersContainerComponent implements OnInit, OnChanges {
   }
 
   search() {
-
     this.dataSource = EM_DATA.filter(
       (item) =>
         item.sites.includes(this.sites || '') &&

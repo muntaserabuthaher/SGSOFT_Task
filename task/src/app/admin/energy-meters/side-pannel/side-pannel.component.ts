@@ -5,7 +5,7 @@ import { ConsumptionPeriod, EnergyMeters, EnergyTypes, EnergyUnit, SrcType } fro
 @Component({
   selector: 'app-side-pannel',
   templateUrl: './side-pannel.component.html',
-  styleUrls: ['./side-pannel.component.css'],
+  styleUrls: ['./side-pannel.component.scss'],
 })
 export class SidePannelComponent implements OnChanges {
   @Input() data!: EnergyMeters;
@@ -54,7 +54,7 @@ export class SidePannelComponent implements OnChanges {
     this.hideSidePannel.emit(true);
   }
 
-  onDelete(){
+  onDelete() {
     this.deleteData.emit(this.updateForm?.value?.id);
     this.closeSidePannel();
   }

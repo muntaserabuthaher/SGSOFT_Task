@@ -8,6 +8,8 @@ header {
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     overflow: hidden;
+    background-color: var(--color-page-background);
+    color: var(--color-text);
 }
 
 .header::after {

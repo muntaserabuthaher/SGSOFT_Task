@@ -4,7 +4,7 @@ import { EnergyMeters } from 'src/app/data';
 @Component({
   selector: 'app-energy-meters',
   templateUrl: './energy-meters.component.html',
-  styleUrls: ['./energy-meters.component.css'],
+  styleUrls: ['./energy-meters.component.scss'],
 })
 export class EnergyMetersComponent implements OnInit {
   isHidden = true;
@@ -28,7 +28,7 @@ export class EnergyMetersComponent implements OnInit {
     this.updatedData = event;
   }
 
-  deleteData(event: number){
+  deleteData(event: number) {
     this.elementDeletedId = event;
   }
 }

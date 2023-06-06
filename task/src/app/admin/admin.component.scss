@@ -1,0 +1,13 @@
+@import "../variables";
+.container {
+    display: grid;
+    grid-template-columns: 70px auto;
+    height: calc(100% - 50px);
+    background-color: var(--color-page-background);
+    color: var(--color-text);
+}
+
+.main-content {
+    padding: 10px 5px;
+    background-color: $secondary-color;
+}

@@ -1,15 +1,16 @@
+@import "../../../variables";
 nav li {
     list-style: none;
     position: relative;
     margin-right: 10px;
     height: 40px;
     cursor: pointer;
-    color: var(--blue);
+    color: $primary-color;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--black);
+    color: $black-color;
     font-size: 15px;
     width: 100%;
 }
@@ -23,14 +24,13 @@ nav li a {
 }
 
 .active-li {
-    background-color: var(--white);
+    background-color: $white-color;
     color: black;
     font-size: 18px;
     width: 100%;
 }
 
 .active-li a {
-    background-color: var(--white);
     font-weight: bold;
     width: 100%
 }
@@ -44,6 +44,7 @@ nav li a {
 
 .active-li .active-li-icon {
     font-weight: bold;
+    color: $black-color;
 }
 
 .active-li::after {
@@ -53,18 +54,19 @@ nav li a {
     height: 100%;
     right: 0px;
     top: 0;
-    background-color: var(--blue);
+    background-color: $primary-color;
 }
 
 .nav-title {
-    color: var(--white);
+    color: $white-color;
     font-weight: bold;
     padding: 20px;
     font-size: 15px;
 }
 
 nav {
-    background-color: var(--white);
+    background-color: var(--color-page-background);
+    color: var(--color-text);
     overflow: hidden;
     box-shadow: 4px 0px 6px rgba(238, 238, 238, 4);
     height: 100%;
@@ -72,12 +74,12 @@ nav {
 
 nav mat-icon {
     padding-right: 30px;
-    color: var(--black);
+    color: var(--color-text);
 }
 
 #sidebar-list {
     padding: 0;
     margin: 0;
-    border-top: 1px solid var(--gray);
-    border-bottom: 1px solid var(--gray);
+    border-top: 1px solid $secondary-color;
+    border-bottom: 1px solid $secondary-color;
 }
